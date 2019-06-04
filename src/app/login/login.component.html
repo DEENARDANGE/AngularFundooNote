@@ -1,0 +1,38 @@
+<div  fxLayoutAlign="center center"></div>
+  <mat-card class="login-card" fxFlex="0 1 100px">
+    <img src="./assets/image/keep-512.png" style="width: 200px;height:200px;">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label for="email">Email ID</mat-label>
+          <input style="width: 450%;" matInput placeholder="Enter the Email ID" formControlName="email" class="form-control">
+
+          <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <mat-error *ngIf="f.email.errors.required">EmailId is required</mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+
+        <mat-form-field appearance="outline">
+          <mat-label for="password">Password</mat-label>
+          <input matInput placeholder="Enter the Password" [type]="hide ? 'password' : 'text'"
+            formControlName="password" class="form-control">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <mat-error *ngIf="f.password.errors.required">Password is required</mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <button color="btn-primary" [disabled]="loading" class="btn btn-primary">Login</button>
+       
+       <div>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a [routerLink]="['/forgotpassword']" >Forgot Password</a></div>
+       
+        <div> Not yet registered?
+          <a [routerLink]="['/registration']" class="btn btn-link">Sign up</a></div>
+      </div>
+    </form>
+  </mat-card>

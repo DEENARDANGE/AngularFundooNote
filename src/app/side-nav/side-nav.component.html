@@ -1,0 +1,44 @@
+
+<!--side navigation bar -->
+<mat-sidenav-container  class="example-container">
+  <mat-sidenav  #drawer mode="side" opened role="navigation">
+    <mat-nav-list *ngIf=!def>
+      
+      <button mat-menu-item  (click)="navigateNotes()" >
+        <mat-icon>notes</mat-icon>
+        <span>Notes</span>
+      </button>
+     
+      <button mat-menu-item>
+        <mat-icon>notifications</mat-icon>
+        <span>Remainder</span>
+      </button>
+      <mat-divider></mat-divider><br>
+      
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span>
+          <font size="1" face="arial">LABELS</font>
+        </span>
+       
+      <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Edit Labels</span>
+        </button>
+        <mat-divider></mat-divider>
+      
+      <button mat-menu-item (click)="navigateArchive()">
+        <mat-icon>archive</mat-icon>
+        <span>Archive</span>
+      </button>
+      
+      <button mat-menu-item (click)="navigateTrash()">
+        <mat-icon>delete</mat-icon>
+        <span>Trash</span>
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container> 
+   

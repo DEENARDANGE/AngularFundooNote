@@ -1,0 +1,60 @@
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+    <mat-card >  
+   
+        <div fxLayout="column" fxLayoutAlign="center center">
+             
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+               <div align="center">
+                        <img src="./assets/image/registration.png" style="height:150px; width: 150px">
+                    </div>
+                <div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" style="padding-top: 40px;">
+                                <mat-label for="name">Name</mat-label>
+                                <input matInput formControlName="name" placeholder="Name" autocomplete="off">
+                                <mat-error *ngIf="f.name.errors">{{'Enter Name'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline">
+                                <mat-label for="email">EmailID</mat-label>
+                                <input matInput formControlName="email" placeholder="Email" autocomplete="off">
+                                <mat-error *ngIf="f.email.errors">{{'Enter Email ID'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="password">Password</mat-label>
+                                <input [type]="showPassword?'text':'password'" matInput formControlName="password"
+                                    placeholder="Password" autocomplete="new-password">
+                                <mat-error *ngIf="f.password.errors">{{'Enter Password'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="phonenumber">Phone Number</mat-label>
+                                <input matInput formControlName="phonenumber" placeholder="phonenumber"
+                                    autocomplete="off">
+                                <mat-error *ngIf="f.phonenumber.errors">{{'Enter Phone Number'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" style="margin : auto 40%;">
+                        <div class="button-row">
+                            <button type="submit" mat-raised-button color="primary">
+                                <p class="register-btn-text">Sign Up</p>
+                            </button>
+                            <div>
+                              <br>
+                                Do have an account?
+                                <br>
+                                <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+                            </div>
+                        </div>
+                </div>
+            </form>
+       
+        </div>
+    </mat-card> 
+</div>

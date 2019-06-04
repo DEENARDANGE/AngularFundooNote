@@ -1,0 +1,53 @@
+ <div >
+  <div>
+    <input class="bor" matInput [(ngModel)]="data.title" style="width: 500px;" [value]=data.title placeholder="Title">
+  </div>
+
+
+  <br>
+  <br>
+  <div>
+
+    <textarea class="bor" [(ngModel)]="data.discription" style="width: 500px;" [value]=data.discription placeholder="Discription"></textarea>
+
+    </div>
+    <br>
+    <br>
+    <div>
+        <button mat-icon-button matTooltip="Remind me">
+          <mat-icon>add_alert</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Collaborator">
+          <mat-icon>person_add</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Change color">
+          <mat-icon>palette</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Add image">
+          <mat-icon>image</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="more" matTooltip="more">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #more="matMenu" class="morecard">
+          <button mat-button (click)=deleteNote(note)>Delete Note</button>
+</mat-menu>
+        <button mat-icon-button matTooltip="undo">
+          <mat-icon>undo</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="redo">
+          <mat-icon>redo</mat-icon>
+        </button>
+      
+  
+
+
+
+
+
+
+    <button mat-button (click)="closeClick(data)" style="float:right">Close</button>
+  </div>
+  </div> 
+
+  <!-- <app-note [data]="data"></app-note> -->
